@@ -7,8 +7,8 @@
         }
 
         body {
-            background-color: #fff;
-            color: #111;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
@@ -22,8 +22,8 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: #fff;
-            border-bottom: 1px solid #ccc;
+            background: #2c2c2c;
+            border-bottom: 1px solid #444;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,7 +56,9 @@
             text-align: center;
             height: 100vh;
             padding-top: 60px;
-            background: #f7f7f7;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
         }
 
         .hero h1 {
@@ -84,10 +86,13 @@
         }
 
         /* Seção Sobre */
-        section {
+        .container-sobre {
+            background: #2c2c2c;
+            border-radius: 10px;
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            margin-bottom: 2rem;
         }
 
         #sobre p {
@@ -96,7 +101,52 @@
             font-size: 1.1rem;
         }
 
+        /* Habilidades */
+        .container-habilidades {
+            background: #2c2c2c;
+            border-radius: 10px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+
+        #habilidades h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0077b6;
+            font-size: 2rem;
+        }
+
+        .lista-habilidades {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lista-habilidades li {
+            background: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: cardFadeIn 1s ease-in;
+        }
+
+        .lista-habilidades li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,61,91,0.3);
+        }
+
         /* Projetos */
+        #projetos {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         #projetos h2 {
             text-align: center;
             margin-bottom: 2rem;
@@ -106,21 +156,22 @@
 
         .grid-projetos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .card {
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 1rem;
             transition: transform 0.3s, box-shadow 0.3s;
-            background: #fff;
+            background: #1a1a1a;
+            animation: cardFadeIn 1s ease-in;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 8px 20px rgba(0,61,91,0.3);
         }
 
         .card h3 {
@@ -162,9 +213,11 @@
 
         input, textarea {
             padding: 0.8rem;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 5px;
             font-size: 1rem;
+            background: #1a1a1a;
+            color: #e0e0e0;
         }
 
         button {
@@ -202,8 +255,9 @@
         footer {
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #444;
             margin-top: 2rem;
+            background: #2c2c2c;
         }
 
         /* Responsivo */
@@ -218,4 +272,32 @@
             .hero p {
                 font-size: 1rem;
             }
+        }
+
+        /* Keyframes para animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
         }
