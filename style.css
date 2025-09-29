@@ -3,13 +3,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Courier New', monospace;
         }
 
         body {
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #e0e0e0;
-            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         a {
@@ -34,17 +47,28 @@
         header .logo {
             font-weight: bold;
             font-size: 1.5rem;
-            color: #0077b6;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
         }
 
-        nav a {
+        nav a, .links-contato button {
             margin-left: 2rem;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s, text-shadow 0.3s;
+            color: #e0e0e0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            color: #0077b6;
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+            background-color: rgba(0, 255, 255, 0.1);
         }
 
         /* Hero */
@@ -64,7 +88,8 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #0077b6;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
         }
 
         .hero p {
@@ -74,15 +99,43 @@
         }
 
         .hero a {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
+            background: #00ffff;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1rem 2rem;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: 2px solid #00ffff;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .hero a:hover {
-            background-color: #005f87;
+            background: #000;
+            color: #00ffff;
+        }
+
+        .download-cv {
+            margin-top: 1rem;
+            background: #00ffff;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            border: 2px solid #00ffff;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+        }
+
+        .download-cv:hover {
+            background: #000;
+            color: #00ffff;
         }
 
         /* Seção Sobre */
@@ -184,15 +237,24 @@
         }
 
         .card a {
-            color: #fff;
-            background-color: #0077b6;
-            padding: 0.5rem 1rem;
+            color: #000;
+            background-color: #00ffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1rem 2rem;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: 2px solid #00ffff;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
         }
-
+        
         .card a:hover {
-            background-color: #005f87;
+            background-color: #000;
+            color: #00ffff;
         }
 
         /* Contato */
@@ -221,18 +283,25 @@
         }
 
         button {
-            padding: 0.8rem 1.5rem;
-            background-color: #0077b6;
-            color: #fff;
-            border: none;
+            margin-top: 1rem;
+            background: #00ffff;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1rem 2rem;
             border-radius: 5px;
-            font-size: 1rem;
+            border: 2px solid #00ffff;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
         }
 
         button:hover {
-            background-color: #005f87;
+            background: #000;
+            color: #00ffff;
         }
 
         .links-contato {
